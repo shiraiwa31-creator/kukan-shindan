@@ -41,6 +41,7 @@ const QUESTIONS = [
     note: "複数選択できます",
     multi: true,
     aspect: "landscape",
+    caption: false,
   },
   {
     cat: "goods",
@@ -49,6 +50,7 @@ const QUESTIONS = [
     note: "複数選択できます",
     multi: true,
     aspect: "landscape",
+    caption: true,
   },
   {
     cat: "emotion",
@@ -57,6 +59,7 @@ const QUESTIONS = [
     note: "1つだけ選んでください",
     multi: false,
     aspect: "landscape",
+    caption: true,
   },
   {
     cat: "palette",
@@ -65,6 +68,7 @@ const QUESTIONS = [
     note: "複数選択できます",
     multi: true,
     aspect: "wide",
+    caption: false,
   },
 ];
 
@@ -146,7 +150,7 @@ function renderQuestion() {
             <img src="${item.img}" alt="${item.name}" loading="lazy">
             <span class="opt-check">✓</span>
           </span>
-          <span class="opt-caption">${item.name}</span>
+          ${q.caption ? `<span class="opt-caption">${item.name}</span>` : ""}
         </button>
       `;
     })
@@ -254,15 +258,6 @@ function renderResult(result, personal) {
       ? `<p class="lean-note">※ ${DATA.styles[result.primary].label}寄りの傾向です</p>`
       : "";
 
-  const traitsSectionHtml = personal
-    ? `
-      <div class="r-section r-traits-section">
-        <h3 class="r-heading">あなたの傾向</h3>
-        ${renderTraitBars(result.shares)}
-      </div>
-    `
-    : "";
-
   paint(`
     <section class="screen-result fade-in">
       <header class="r-header">
@@ -276,8 +271,6 @@ function renderResult(result, personal) {
         <h3 class="r-heading">4象限マップ</h3>
         ${renderQuadrantMap(result, personal)}
       </div>
-
-      ${traitsSectionHtml}
 
       <div class="r-section r-desc-section">
         <h3 class="r-heading">テイストの傾向</h3>
@@ -329,36 +322,18 @@ function projectCoord(coord, size, pad) {
 }
 
 function renderQuadrantMap(result, personal) {
+  // 結果パターンのポジションのみを表示する
   const size = 320;
   const pad = 56;
   const cx = size / 2;
   const cy = size / 2;
   const patternCoord = personal ? result.patternCoord : Engine.coordForPattern(result.pattern);
 
-  const dotsSvg = DATA.styleKeys
-    .map((k) => {
-      const st = DATA.styles[k];
-      const [px, py] = projectCoord(st.coord, size, pad);
-      return `
-        <circle cx="${px}" cy="${py}" r="5" fill="${st.color}"></circle>
-        <text x="${px}" y="${py - 10}" class="map-label" fill="${st.color}">${st.label}</text>
-      `;
-    })
-    .join("");
-
-  let userSvg = "";
-  if (personal) {
-    const [ux, uy] = projectCoord(result.userCoord, size, pad);
-    userSvg = `
-      <circle cx="${ux}" cy="${uy}" r="7" class="map-user-dot"></circle>
-      <text x="${ux}" y="${uy + 20}" class="map-user-label">回答の重心</text>
-    `;
-  }
-
   const [pxx, pyy] = projectCoord(patternCoord, size, pad);
+  // ラベルは点の下に置き、横軸ラベル(ナチュラル/モダン)との重なりを避ける
   const patternSvg = `
     <circle cx="${pxx}" cy="${pyy}" r="9" class="map-pattern-dot"></circle>
-    <text x="${pxx}" y="${pyy - 16}" class="map-pattern-label">あなたのタイプ</text>
+    <text x="${pxx}" y="${pyy + 26}" class="map-pattern-label" text-anchor="middle">あなたのタイプ</text>
   `;
 
   return `
@@ -369,37 +344,9 @@ function renderQuadrantMap(result, personal) {
       <text x="${size - pad + 8}" y="${cy - 10}" class="map-axis-label" text-anchor="end">モダン</text>
       <text x="${cx}" y="${pad - 16}" class="map-axis-label" text-anchor="middle">デコラティブ</text>
       <text x="${cx}" y="${size - pad + 26}" class="map-axis-label" text-anchor="middle">シンプル</text>
-      ${dotsSvg}
-      ${userSvg}
       ${patternSvg}
     </svg>
   `;
-}
-
-/* ---------- あなたの傾向(横棒グラフ) ---------- */
-function renderTraitBars(shares) {
-  const rows = DATA.styleKeys
-    .map((k) => ({
-      label: DATA.styles[k].label,
-      color: DATA.styles[k].color,
-      value: shares[k] || 0,
-    }))
-    .sort((a, b) => b.value - a.value);
-
-  const rowsHtml = rows
-    .map((r) => {
-      const pct = Math.round(r.value * 100);
-      return `
-        <div class="trait-row">
-          <span class="trait-label">${r.label}</span>
-          <span class="trait-track"><span class="trait-fill" style="width:${pct}%;background:${r.color}"></span></span>
-          <span class="trait-pct">${pct}%</span>
-        </div>
-      `;
-    })
-    .join("");
-
-  return `<div class="trait-bars">${rowsHtml}</div>`;
 }
 
 /* ---------- 写真・小物グリッド ---------- */
@@ -409,7 +356,7 @@ function renderMediaGrid(items) {
       (item) => `
         <div class="media-card">
           <div class="media-thumb"><img src="${item.img}" alt="${item.name}" loading="lazy"></div>
-          <p class="media-caption">${item.name}</p>
+          ${item.name ? `<p class="media-caption">${item.name}</p>` : ""}
         </div>
       `
     )

@@ -22,6 +22,14 @@ python3 scripts/build_data.py
 node scripts/test_engine.mjs   # 判定ロジックの検証(13テスト)
 ```
 
+結果LPの「こんなインテリアが似合います」の写真は「インテリア (1).pdf」(23ページ・1パターン1ページ)が元データです。
+PDF を更新したら以下を実行してから `build_data.py` を再実行してください(「保留」ラベルの画像は自動で除外されます):
+
+```bash
+python3 scripts/extract_result_photos.py
+python3 scripts/build_data.py
+```
+
 - 23パターンの紹介文・特殊判定タグ・しきい値: `scripts/curated_content.json`
 - 判定ロジック(リノベレシピ_空間診断仕様書_Ver2 準拠): `app/js/engine.js`
 - 設計書: `docs/superpowers/specs/2026-07-21-kukan-shindan-webapp-design.md`

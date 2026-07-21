@@ -302,12 +302,18 @@ p {
   aspect-ratio: 4 / 3;
 }
 .opt-thumb.aspect-wide {
-  aspect-ratio: 3 / 1;
+  /* 配色画像は切り抜かず全体を表示する */
+  aspect-ratio: auto;
+  background: #fff;
 }
 .opt-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.opt-thumb.aspect-wide img {
+  height: auto;
+  object-fit: contain;
 }
 .opt-check {
   position: absolute;

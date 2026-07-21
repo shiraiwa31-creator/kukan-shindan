@@ -186,7 +186,18 @@ const DATA = {
     "natural"
    ],
    "catch": "やさしさと可憐さに包まれる、花のある暮らし",
-   "description": "淡いピンクや花柄、リネンのやわらかな質感に心がときめくタイプ。エレガントの上品さとナチュラルの素朴さをあわせ持ち、小さな花を飾るだけで空間がぱっと明るくなります。木製家具に花柄のファブリックや繊細な小物を合わせると、可憐であたたかい雰囲気がまとまります。"
+   "description": "淡いピンクや花柄、リネンのやわらかな質感に心がときめくタイプ。エレガントの上品さとナチュラルの素朴さをあわせ持ち、小さな花を飾るだけで空間がぱっと明るくなります。木製家具に花柄のファブリックや繊細な小物を合わせると、可憐であたたかい雰囲気がまとまります。",
+   "photos": [
+    "assets/results/kobana/01.jpg",
+    "assets/results/kobana/02.jpg",
+    "assets/results/kobana/03.jpg",
+    "assets/results/kobana/04.jpg",
+    "assets/results/kobana/05.jpg",
+    "assets/results/kobana/06.jpg",
+    "assets/results/kobana/07.jpg",
+    "assets/results/kobana/08.jpg",
+    "assets/results/kobana/09.jpg"
+   ]
   },
   {
    "id": "industrial",
@@ -197,7 +208,21 @@ const DATA = {
     "casual"
    ],
    "catch": "無骨さを楽しむ、かっこいい大人の遊び場",
-   "description": "ブラックアイアンやコンクリート、レザーといった無骨な素材に惹かれるタイプ。モダンの洗練とカジュアルの遊び心が同居し、ヴィンテージ家具や工業系の照明がよく似合います。濃色の木材と黒をベースに、あえてラフさを残すのがかっこよく決めるコツです。"
+   "description": "ブラックアイアンやコンクリート、レザーといった無骨な素材に惹かれるタイプ。モダンの洗練とカジュアルの遊び心が同居し、ヴィンテージ家具や工業系の照明がよく似合います。濃色の木材と黒をベースに、あえてラフさを残すのがかっこよく決めるコツです。",
+   "photos": [
+    "assets/results/industrial/01.jpg",
+    "assets/results/industrial/02.jpg",
+    "assets/results/industrial/03.jpg",
+    "assets/results/industrial/04.jpg",
+    "assets/results/industrial/05.jpg",
+    "assets/results/industrial/06.jpg",
+    "assets/results/industrial/07.jpg",
+    "assets/results/industrial/08.jpg",
+    "assets/results/industrial/09.jpg",
+    "assets/results/industrial/10.jpg",
+    "assets/results/industrial/11.jpg",
+    "assets/results/industrial/12.jpg"
+   ]
   },
   {
    "id": "natural",
@@ -207,7 +232,20 @@ const DATA = {
     "natural"
    ],
    "catch": "木のぬくもりに癒される、飾らない心地よさ",
-   "description": "自然素材や木の質感、やわらかな光に心地よさを感じるタイプ。ベージュやアイボリーを基調に、観葉植物のグリーンを添えると空間が生き生きとします。無理に飾り立てず、素材そのものの美しさを活かすシンプルなコーディネートが似合います。"
+   "description": "自然素材や木の質感、やわらかな光に心地よさを感じるタイプ。ベージュやアイボリーを基調に、観葉植物のグリーンを添えると空間が生き生きとします。無理に飾り立てず、素材そのものの美しさを活かすシンプルなコーディネートが似合います。",
+   "photos": [
+    "assets/results/natural/01.jpg",
+    "assets/results/natural/02.jpg",
+    "assets/results/natural/03.jpg",
+    "assets/results/natural/04.jpg",
+    "assets/results/natural/05.jpg",
+    "assets/results/natural/06.jpg",
+    "assets/results/natural/07.jpg",
+    "assets/results/natural/08.jpg",
+    "assets/results/natural/09.jpg",
+    "assets/results/natural/10.jpg",
+    "assets/results/natural/11.jpg"
+   ]
   },
   {
    "id": "natural-casual",
@@ -218,7 +256,22 @@ const DATA = {
     "casual"
    ],
    "catch": "あたたかくて、ちょっと遊び心のある空間",
-   "description": "木のあたたかみをベースに、明るい色や楽しい雑貨を取り入れたいタイプ。肩の力が抜けた、友人を気軽に呼べるような居心地のよさが魅力です。ライトブラウンの家具にイエローやグリーンなどのアクセントカラーを効かせると、あなたらしい空間になります。"
+   "description": "木のあたたかみをベースに、明るい色や楽しい雑貨を取り入れたいタイプ。肩の力が抜けた、友人を気軽に呼べるような居心地のよさが魅力です。ライトブラウンの家具にイエローやグリーンなどのアクセントカラーを効かせると、あなたらしい空間になります。",
+   "photos": [
+    "assets/results/natural-casual/01.jpg",
+    "assets/results/natural-casual/02.jpg",
+    "assets/results/natural-casual/03.jpg",
+    "assets/results/natural-casual/04.jpg",
+    "assets/results/natural-casual/05.jpg",
+    "assets/results/natural-casual/06.jpg",
+    "assets/results/natural-casual/07.jpg",
+    "assets/results/natural-casual/08.jpg",
+    "assets/results/natural-casual/09.jpg",
+    "assets/results/natural-casual/10.jpg",
+    "assets/results/natural-casual/11.jpg",
+    "assets/results/natural-casual/12.jpg",
+    "assets/results/natural-casual/13.jpg"
+   ]
   },
   {
    "id": "hokuo",
@@ -230,7 +283,21 @@ const DATA = {
     "casual"
    ],
    "catch": "明るい木と機能美が調和する、心地よい定番",
-   "description": "明るい木材と白を基調に、シンプルで機能的な家具を好むタイプ。ナチュラルの温かみに、すっきりとした洗練とほどよい遊び心が加わった、飽きのこないスタイルです。ライトブルーやイエローなどの差し色と、デザイン性のある照明やファブリックがよく似合います。"
+   "description": "明るい木材と白を基調に、シンプルで機能的な家具を好むタイプ。ナチュラルの温かみに、すっきりとした洗練とほどよい遊び心が加わった、飽きのこないスタイルです。ライトブルーやイエローなどの差し色と、デザイン性のある照明やファブリックがよく似合います。",
+   "photos": [
+    "assets/results/hokuo/01.jpg",
+    "assets/results/hokuo/02.jpg",
+    "assets/results/hokuo/03.jpg",
+    "assets/results/hokuo/04.jpg",
+    "assets/results/hokuo/05.jpg",
+    "assets/results/hokuo/06.jpg",
+    "assets/results/hokuo/07.jpg",
+    "assets/results/hokuo/08.jpg",
+    "assets/results/hokuo/09.jpg",
+    "assets/results/hokuo/10.jpg",
+    "assets/results/hokuo/11.jpg",
+    "assets/results/hokuo/12.jpg"
+   ]
   },
   {
    "id": "natural-chic",
@@ -241,7 +308,20 @@ const DATA = {
     "chic"
    ],
    "catch": "自然体なのに上質。大人のくつろぎ空間",
-   "description": "木のぬくもりを感じながらも、落ち着いたホテルライクな上質さを求めるタイプ。グレージュやブラウンでトーンを揃えると、静かで洗練された癒しの空間になります。無垢材の家具に、上質なファブリックや間接照明を合わせるのがおすすめです。"
+   "description": "木のぬくもりを感じながらも、落ち着いたホテルライクな上質さを求めるタイプ。グレージュやブラウンでトーンを揃えると、静かで洗練された癒しの空間になります。無垢材の家具に、上質なファブリックや間接照明を合わせるのがおすすめです。",
+   "photos": [
+    "assets/results/natural-chic/01.jpg",
+    "assets/results/natural-chic/02.jpg",
+    "assets/results/natural-chic/03.jpg",
+    "assets/results/natural-chic/04.jpg",
+    "assets/results/natural-chic/05.jpg",
+    "assets/results/natural-chic/06.jpg",
+    "assets/results/natural-chic/07.jpg",
+    "assets/results/natural-chic/08.jpg",
+    "assets/results/natural-chic/09.jpg",
+    "assets/results/natural-chic/10.jpg",
+    "assets/results/natural-chic/11.jpg"
+   ]
   },
   {
    "id": "casual",
@@ -251,7 +331,22 @@ const DATA = {
     "casual"
    ],
    "catch": "好きなものに囲まれる、明るく楽しい毎日",
-   "description": "カラフルな色や好きな雑貨に囲まれて、わくわくする空間を作りたいタイプ。ポップなアートや推しグッズも、色数をしぼって飾ればセンスよくまとまります。明るい木材と白をベースに、ビビッドな色を差し色として楽しむのがコツです。"
+   "description": "カラフルな色や好きな雑貨に囲まれて、わくわくする空間を作りたいタイプ。ポップなアートや推しグッズも、色数をしぼって飾ればセンスよくまとまります。明るい木材と白をベースに、ビビッドな色を差し色として楽しむのがコツです。",
+   "photos": [
+    "assets/results/casual/01.jpg",
+    "assets/results/casual/02.jpg",
+    "assets/results/casual/03.jpg",
+    "assets/results/casual/04.jpg",
+    "assets/results/casual/05.jpg",
+    "assets/results/casual/06.jpg",
+    "assets/results/casual/07.jpg",
+    "assets/results/casual/08.jpg",
+    "assets/results/casual/09.jpg",
+    "assets/results/casual/10.jpg",
+    "assets/results/casual/11.jpg",
+    "assets/results/casual/12.jpg",
+    "assets/results/casual/13.jpg"
+   ]
   },
   {
    "id": "casual-modern",
@@ -262,7 +357,20 @@ const DATA = {
     "modern"
    ],
    "catch": "遊び心とクールさのいいとこ取り",
-   "description": "楽しさと洗練を両立させたいタイプ。モノトーンや直線的な家具をベースに、ポップな色やアートを効かせると、都会的なのに堅苦しくない空間になります。ミッドセンチュリー系の名作家具やグラフィカルなポスターがよく似合います。"
+   "description": "楽しさと洗練を両立させたいタイプ。モノトーンや直線的な家具をベースに、ポップな色やアートを効かせると、都会的なのに堅苦しくない空間になります。ミッドセンチュリー系の名作家具やグラフィカルなポスターがよく似合います。",
+   "photos": [
+    "assets/results/casual-modern/01.jpg",
+    "assets/results/casual-modern/02.jpg",
+    "assets/results/casual-modern/03.jpg",
+    "assets/results/casual-modern/04.jpg",
+    "assets/results/casual-modern/05.jpg",
+    "assets/results/casual-modern/06.jpg",
+    "assets/results/casual-modern/07.jpg",
+    "assets/results/casual-modern/08.jpg",
+    "assets/results/casual-modern/09.jpg",
+    "assets/results/casual-modern/10.jpg",
+    "assets/results/casual-modern/11.jpg"
+   ]
   },
   {
    "id": "chic",
@@ -272,7 +380,19 @@ const DATA = {
     "chic"
    ],
    "catch": "ホテルのような、静かで上質なくつろぎ",
-   "description": "落ち着いたトーンと上質な素材で、ホテルライクな空間を求めるタイプ。グレージュやチャコールでまとめた、ノイズのない静かな部屋がよく似合います。素材の質感にこだわり、間接照明で陰影をつくると、ぐっと洗練された雰囲気になります。"
+   "description": "落ち着いたトーンと上質な素材で、ホテルライクな空間を求めるタイプ。グレージュやチャコールでまとめた、ノイズのない静かな部屋がよく似合います。素材の質感にこだわり、間接照明で陰影をつくると、ぐっと洗練された雰囲気になります。",
+   "photos": [
+    "assets/results/chic/01.jpg",
+    "assets/results/chic/02.jpg",
+    "assets/results/chic/03.jpg",
+    "assets/results/chic/04.jpg",
+    "assets/results/chic/05.jpg",
+    "assets/results/chic/06.jpg",
+    "assets/results/chic/07.jpg",
+    "assets/results/chic/08.jpg",
+    "assets/results/chic/09.jpg",
+    "assets/results/chic/10.jpg"
+   ]
   },
   {
    "id": "chic-elegant",
@@ -283,7 +403,17 @@ const DATA = {
     "elegant"
    ],
    "catch": "落ち着きの中に、華やぎをひとさじ",
-   "description": "上質で落ち着いた空間に、華やかさや女性らしい柔らかさを添えたいタイプ。グレーやグレージュを基調に、ゴールドの小物や曲線的な家具を合わせると、気品のある大人の空間になります。花やキャンドルなど、香りや彩りの演出も効果的です。"
+   "description": "上質で落ち着いた空間に、華やかさや女性らしい柔らかさを添えたいタイプ。グレーやグレージュを基調に、ゴールドの小物や曲線的な家具を合わせると、気品のある大人の空間になります。花やキャンドルなど、香りや彩りの演出も効果的です。",
+   "photos": [
+    "assets/results/chic-elegant/01.jpg",
+    "assets/results/chic-elegant/02.jpg",
+    "assets/results/chic-elegant/03.jpg",
+    "assets/results/chic-elegant/04.jpg",
+    "assets/results/chic-elegant/05.jpg",
+    "assets/results/chic-elegant/06.jpg",
+    "assets/results/chic-elegant/07.jpg",
+    "assets/results/chic-elegant/08.jpg"
+   ]
   },
   {
    "id": "chic-modern",
@@ -294,7 +424,16 @@ const DATA = {
     "modern"
    ],
    "catch": "都会的で凛とした、大人のモノトーン空間",
-   "description": "落ち着きと洗練をどちらも求める、都会的なタイプ。チャコールやブラックを効かせたモノトーンの空間に、上質な素材感を重ねるのが似合います。直線的な家具とスモークガラスや大理石調の素材で、ホテルのバーラウンジのような雰囲気に。"
+   "description": "落ち着きと洗練をどちらも求める、都会的なタイプ。チャコールやブラックを効かせたモノトーンの空間に、上質な素材感を重ねるのが似合います。直線的な家具とスモークガラスや大理石調の素材で、ホテルのバーラウンジのような雰囲気に。",
+   "photos": [
+    "assets/results/chic-modern/01.jpg",
+    "assets/results/chic-modern/02.jpg",
+    "assets/results/chic-modern/03.jpg",
+    "assets/results/chic-modern/04.jpg",
+    "assets/results/chic-modern/05.jpg",
+    "assets/results/chic-modern/06.jpg",
+    "assets/results/chic-modern/07.jpg"
+   ]
   },
   {
    "id": "chic-casual",
@@ -305,7 +444,19 @@ const DATA = {
     "casual"
    ],
    "catch": "リラックスと上質のバランス上手",
-   "description": "落ち着いた空間が好きだけれど、堅苦しいのは苦手なタイプ。ダークトーンの家具に、デニムや古材のようなラフな素材を合わせると、こなれた大人カジュアルな空間になります。ヴィンテージ小物やアートで自分らしさを足すのもおすすめです。"
+   "description": "落ち着いた空間が好きだけれど、堅苦しいのは苦手なタイプ。ダークトーンの家具に、デニムや古材のようなラフな素材を合わせると、こなれた大人カジュアルな空間になります。ヴィンテージ小物やアートで自分らしさを足すのもおすすめです。",
+   "photos": [
+    "assets/results/chic-casual/01.jpg",
+    "assets/results/chic-casual/02.jpg",
+    "assets/results/chic-casual/03.jpg",
+    "assets/results/chic-casual/04.jpg",
+    "assets/results/chic-casual/05.jpg",
+    "assets/results/chic-casual/06.jpg",
+    "assets/results/chic-casual/07.jpg",
+    "assets/results/chic-casual/08.jpg",
+    "assets/results/chic-casual/09.jpg",
+    "assets/results/chic-casual/10.jpg"
+   ]
   },
   {
    "id": "classic",
@@ -315,7 +466,18 @@ const DATA = {
     "classic"
    ],
    "catch": "時を重ねて美しい、王道の風格",
-   "description": "重厚感のある家具や伝統的な意匠に惹かれるタイプ。ダークブラウンの木材やレザー、装飾のある家具が織りなす、格調高い空間が似合います。アンティークや本のディスプレイ、真鍮の小物で、時間を重ねたような深みを演出しましょう。"
+   "description": "重厚感のある家具や伝統的な意匠に惹かれるタイプ。ダークブラウンの木材やレザー、装飾のある家具が織りなす、格調高い空間が似合います。アンティークや本のディスプレイ、真鍮の小物で、時間を重ねたような深みを演出しましょう。",
+   "photos": [
+    "assets/results/classic/01.jpg",
+    "assets/results/classic/02.jpg",
+    "assets/results/classic/03.jpg",
+    "assets/results/classic/04.jpg",
+    "assets/results/classic/05.jpg",
+    "assets/results/classic/06.jpg",
+    "assets/results/classic/07.jpg",
+    "assets/results/classic/08.jpg",
+    "assets/results/classic/09.jpg"
+   ]
   },
   {
    "id": "classic-modern",
@@ -326,7 +488,16 @@ const DATA = {
     "modern"
    ],
    "catch": "伝統と現代が響き合う、格調高い洗練",
-   "description": "クラシックの重厚感とモダンの洗練を融合させたいタイプ。装飾的な家具をモノトーンでまとめたり、現代的な空間に一点だけアンティークを置いたり、新旧のコントラストを楽しめます。ダーク木材×ガラス・スチールの組み合わせが効果的です。"
+   "description": "クラシックの重厚感とモダンの洗練を融合させたいタイプ。装飾的な家具をモノトーンでまとめたり、現代的な空間に一点だけアンティークを置いたり、新旧のコントラストを楽しめます。ダーク木材×ガラス・スチールの組み合わせが効果的です。",
+   "photos": [
+    "assets/results/classic-modern/01.jpg",
+    "assets/results/classic-modern/02.jpg",
+    "assets/results/classic-modern/03.jpg",
+    "assets/results/classic-modern/04.jpg",
+    "assets/results/classic-modern/05.jpg",
+    "assets/results/classic-modern/06.jpg",
+    "assets/results/classic-modern/07.jpg"
+   ]
   },
   {
    "id": "classic-casual",
@@ -337,7 +508,17 @@ const DATA = {
     "casual"
    ],
    "catch": "重厚なのに親しみやすい、味わいのある空間",
-   "description": "アンティークやレトロなものが好きで、それを気負わず日常に取り入れたいタイプ。使い込まれた木の家具やレザーに、ポップな色や雑貨を合わせると、カフェのような味わいのある空間になります。レトロダイナー風の演出もよく似合います。"
+   "description": "アンティークやレトロなものが好きで、それを気負わず日常に取り入れたいタイプ。使い込まれた木の家具やレザーに、ポップな色や雑貨を合わせると、カフェのような味わいのある空間になります。レトロダイナー風の演出もよく似合います。",
+   "photos": [
+    "assets/results/classic-casual/01.jpg",
+    "assets/results/classic-casual/02.jpg",
+    "assets/results/classic-casual/03.jpg",
+    "assets/results/classic-casual/04.jpg",
+    "assets/results/classic-casual/05.jpg",
+    "assets/results/classic-casual/06.jpg",
+    "assets/results/classic-casual/07.jpg",
+    "assets/results/classic-casual/08.jpg"
+   ]
   },
   {
    "id": "elegant",
@@ -347,7 +528,21 @@ const DATA = {
     "elegant"
    ],
    "catch": "上品で華やか、うっとりする美しい空間",
-   "description": "曲線的な家具や華やかな装飾、上品な色づかいに心惹かれるタイプ。白やアイボリーをベースに、ゴールドやピンクを添えた、明るく優美な空間が似合います。シルク調のファブリックやガラスの小物で、光を美しく取り込みましょう。"
+   "description": "曲線的な家具や華やかな装飾、上品な色づかいに心惹かれるタイプ。白やアイボリーをベースに、ゴールドやピンクを添えた、明るく優美な空間が似合います。シルク調のファブリックやガラスの小物で、光を美しく取り込みましょう。",
+   "photos": [
+    "assets/results/elegant/01.jpg",
+    "assets/results/elegant/02.jpg",
+    "assets/results/elegant/03.jpg",
+    "assets/results/elegant/04.jpg",
+    "assets/results/elegant/05.jpg",
+    "assets/results/elegant/06.jpg",
+    "assets/results/elegant/07.jpg",
+    "assets/results/elegant/08.jpg",
+    "assets/results/elegant/09.jpg",
+    "assets/results/elegant/10.jpg",
+    "assets/results/elegant/11.jpg",
+    "assets/results/elegant/12.jpg"
+   ]
   },
   {
    "id": "elegant-casual",
@@ -358,7 +553,21 @@ const DATA = {
     "casual"
    ],
    "catch": "華やかさを、肩ひじ張らずに楽しむ",
-   "description": "華やかで上品なものが好きだけれど、気取りすぎない心地よさも大切にしたいタイプ。白を基調に、パステルカラーや楽しい雑貨をバランスよく取り入れると、明るく親しみやすいフェミニン空間になります。花やアートを気軽に飾るのがおすすめです。"
+   "description": "華やかで上品なものが好きだけれど、気取りすぎない心地よさも大切にしたいタイプ。白を基調に、パステルカラーや楽しい雑貨をバランスよく取り入れると、明るく親しみやすいフェミニン空間になります。花やアートを気軽に飾るのがおすすめです。",
+   "photos": [
+    "assets/results/elegant-casual/01.jpg",
+    "assets/results/elegant-casual/02.jpg",
+    "assets/results/elegant-casual/03.jpg",
+    "assets/results/elegant-casual/04.jpg",
+    "assets/results/elegant-casual/05.jpg",
+    "assets/results/elegant-casual/06.jpg",
+    "assets/results/elegant-casual/07.jpg",
+    "assets/results/elegant-casual/08.jpg",
+    "assets/results/elegant-casual/09.jpg",
+    "assets/results/elegant-casual/10.jpg",
+    "assets/results/elegant-casual/11.jpg",
+    "assets/results/elegant-casual/12.jpg"
+   ]
   },
   {
    "id": "elegant-natural",
@@ -369,7 +578,20 @@ const DATA = {
     "natural"
    ],
    "catch": "自然のやさしさをまとった、上品な華やぎ",
-   "description": "上品な華やかさと、自然素材のあたたかみを両方求めるタイプ。白木やリネンのやわらかな質感に、曲線的な家具や花を合わせると、優しく満ち足りた空間になります。ベージュ×ピンクベージュの配色に、グリーンを添えるのが似合います。"
+   "description": "上品な華やかさと、自然素材のあたたかみを両方求めるタイプ。白木やリネンのやわらかな質感に、曲線的な家具や花を合わせると、優しく満ち足りた空間になります。ベージュ×ピンクベージュの配色に、グリーンを添えるのが似合います。",
+   "photos": [
+    "assets/results/elegant-natural/01.jpg",
+    "assets/results/elegant-natural/02.jpg",
+    "assets/results/elegant-natural/03.jpg",
+    "assets/results/elegant-natural/04.jpg",
+    "assets/results/elegant-natural/05.jpg",
+    "assets/results/elegant-natural/06.jpg",
+    "assets/results/elegant-natural/07.jpg",
+    "assets/results/elegant-natural/08.jpg",
+    "assets/results/elegant-natural/09.jpg",
+    "assets/results/elegant-natural/10.jpg",
+    "assets/results/elegant-natural/11.jpg"
+   ]
   },
   {
    "id": "soft-elegant",
@@ -380,7 +602,16 @@ const DATA = {
     "chic"
    ],
    "catch": "淡い色に包まれる、しっとり上品な空間",
-   "description": "淡いトーンと曲線的なフォルム、しっとりとした上品さに惹かれるタイプ。エレガントの華やかさをぐっと抑えた、控えめで洗練された美しさが持ち味です。ピンクベージュやアイボリーのグラデーションに、花やキャンドル、ガラスの小物を添えて。"
+   "description": "淡いトーンと曲線的なフォルム、しっとりとした上品さに惹かれるタイプ。エレガントの華やかさをぐっと抑えた、控えめで洗練された美しさが持ち味です。ピンクベージュやアイボリーのグラデーションに、花やキャンドル、ガラスの小物を添えて。",
+   "photos": [
+    "assets/results/soft-elegant/01.jpg",
+    "assets/results/soft-elegant/02.jpg",
+    "assets/results/soft-elegant/03.jpg",
+    "assets/results/soft-elegant/04.jpg",
+    "assets/results/soft-elegant/05.jpg",
+    "assets/results/soft-elegant/06.jpg",
+    "assets/results/soft-elegant/07.jpg"
+   ]
   },
   {
    "id": "elegant-modern",
@@ -391,7 +622,21 @@ const DATA = {
     "modern"
    ],
    "catch": "華やかさとシャープさが同居する、洗練の極み",
-   "description": "華やかな上品さと、モダンな洗練をあわせ持つタイプ。鏡面仕上げの家具やガラス、ゴールドの金具が織りなす、ラグジュアリーホテルのような空間が似合います。モノトーン×ゴールドの配色で、ドラマチックにまとめましょう。"
+   "description": "華やかな上品さと、モダンな洗練をあわせ持つタイプ。鏡面仕上げの家具やガラス、ゴールドの金具が織りなす、ラグジュアリーホテルのような空間が似合います。モノトーン×ゴールドの配色で、ドラマチックにまとめましょう。",
+   "photos": [
+    "assets/results/elegant-modern/01.jpg",
+    "assets/results/elegant-modern/02.jpg",
+    "assets/results/elegant-modern/03.jpg",
+    "assets/results/elegant-modern/04.jpg",
+    "assets/results/elegant-modern/05.jpg",
+    "assets/results/elegant-modern/06.jpg",
+    "assets/results/elegant-modern/07.jpg",
+    "assets/results/elegant-modern/08.jpg",
+    "assets/results/elegant-modern/09.jpg",
+    "assets/results/elegant-modern/10.jpg",
+    "assets/results/elegant-modern/11.jpg",
+    "assets/results/elegant-modern/12.jpg"
+   ]
   },
   {
    "id": "modern",
@@ -401,7 +646,21 @@ const DATA = {
     "modern"
    ],
    "catch": "無駄をそぎ落とした、クールな洗練",
-   "description": "直線的なデザインと無機質な素材、ミニマルな空間に美しさを感じるタイプ。モノトーンを基調に、ガラスやスチールの家具ですっきりとまとめるのが似合います。ものを厳選し、シンプルな収納で生活感を消すと、理想の空間に近づきます。"
+   "description": "直線的なデザインと無機質な素材、ミニマルな空間に美しさを感じるタイプ。モノトーンを基調に、ガラスやスチールの家具ですっきりとまとめるのが似合います。ものを厳選し、シンプルな収納で生活感を消すと、理想の空間に近づきます。",
+   "photos": [
+    "assets/results/modern/01.jpg",
+    "assets/results/modern/02.jpg",
+    "assets/results/modern/03.jpg",
+    "assets/results/modern/04.jpg",
+    "assets/results/modern/05.jpg",
+    "assets/results/modern/06.jpg",
+    "assets/results/modern/07.jpg",
+    "assets/results/modern/08.jpg",
+    "assets/results/modern/09.jpg",
+    "assets/results/modern/10.jpg",
+    "assets/results/modern/11.jpg",
+    "assets/results/modern/12.jpg"
+   ]
   },
   {
    "id": "modern-natural",
@@ -412,7 +671,18 @@ const DATA = {
     "natural"
    ],
    "catch": "洗練とぬくもりの、ちょうどいい関係",
-   "description": "すっきりとした洗練を求めつつ、木のあたたかみも手放したくないタイプ。直線的な家具に明るい木目を合わせた、シンプルで心地よい空間が似合います。グレー×ウッドの配色に観葉植物を添えると、無機質になりすぎず整います。"
+   "description": "すっきりとした洗練を求めつつ、木のあたたかみも手放したくないタイプ。直線的な家具に明るい木目を合わせた、シンプルで心地よい空間が似合います。グレー×ウッドの配色に観葉植物を添えると、無機質になりすぎず整います。",
+   "photos": [
+    "assets/results/modern-natural/01.jpg",
+    "assets/results/modern-natural/02.jpg",
+    "assets/results/modern-natural/03.jpg",
+    "assets/results/modern-natural/04.jpg",
+    "assets/results/modern-natural/05.jpg",
+    "assets/results/modern-natural/06.jpg",
+    "assets/results/modern-natural/07.jpg",
+    "assets/results/modern-natural/08.jpg",
+    "assets/results/modern-natural/09.jpg"
+   ]
   },
   {
    "id": "modern-casual",
@@ -423,7 +693,21 @@ const DATA = {
     "casual"
    ],
    "catch": "クールをベースに、自分らしい遊びを",
-   "description": "モノトーンの洗練された空間に、遊び心をプラスしたいタイプ。ベースはシンプルに抑えて、アートやビビッドな色の小物で個性を表現するのが似合います。ブルーやマスタードの差し色、グラフィカルなポスターで自分らしさを楽しんで。"
+   "description": "モノトーンの洗練された空間に、遊び心をプラスしたいタイプ。ベースはシンプルに抑えて、アートやビビッドな色の小物で個性を表現するのが似合います。ブルーやマスタードの差し色、グラフィカルなポスターで自分らしさを楽しんで。",
+   "photos": [
+    "assets/results/modern-casual/01.jpg",
+    "assets/results/modern-casual/02.jpg",
+    "assets/results/modern-casual/03.jpg",
+    "assets/results/modern-casual/04.jpg",
+    "assets/results/modern-casual/05.jpg",
+    "assets/results/modern-casual/06.jpg",
+    "assets/results/modern-casual/07.jpg",
+    "assets/results/modern-casual/08.jpg",
+    "assets/results/modern-casual/09.jpg",
+    "assets/results/modern-casual/10.jpg",
+    "assets/results/modern-casual/11.jpg",
+    "assets/results/modern-casual/12.jpg"
+   ]
   }
  ],
  "comboMap": {

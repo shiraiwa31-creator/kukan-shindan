@@ -132,7 +132,10 @@ function createEngine(data) {
       }
     }
     return {
-      photos: top(data.questions.ldk, 4),
+      // 結果写真はPDF由来のパターン別ギャラリーを優先し、なければLDK画像から選ぶ
+      photos: pattern.photos && pattern.photos.length
+        ? pattern.photos.map((img) => ({ img, name: "" }))
+        : top(data.questions.ldk, 4),
       goods: top(data.questions.goods, 4),
       palettes: [...data.resultPalettes]
         .sort((a, b) => matchScore(b.weights, pattern) - matchScore(a.weights, pattern))
