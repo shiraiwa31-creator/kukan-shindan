@@ -84,7 +84,17 @@ function emptyAnswers() {
 const state = {
   qIndex: 0,
   answers: emptyAnswers(),
+  ldkOrder: null, // Q1の表示順(診断開始時にシャッフル。戻る/進むでは変わらない)
 };
+
+function shuffled(items) {
+  const arr = [...items];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 const app = document.getElementById("app");
 
@@ -131,12 +141,13 @@ function renderTop() {
 function startQuiz() {
   state.answers = emptyAnswers();
   state.qIndex = 0;
+  state.ldkOrder = shuffled(DATA.questions.ldk); // テイスト順の偏りを避けるためランダム表示
   renderQuestion();
 }
 
 function renderQuestion() {
   const q = QUESTIONS[state.qIndex];
-  const items = DATA.questions[q.cat];
+  const items = q.cat === "ldk" && state.ldkOrder ? state.ldkOrder : DATA.questions[q.cat];
   const selected = state.answers[q.cat];
   const progressPct = Math.round(((state.qIndex + 1) / QUESTIONS.length) * 100);
   const canProceed = selected.length > 0;
