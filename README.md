@@ -2,6 +2,18 @@
 
 airCloset の診断を参考にした、インテリアテイスト診断(全4問 → 23パターン判定)。
 
+## 公開URL
+
+**https://shiraiwa31-creator.github.io/kukan-shindan/**
+(GitHub Pages / 公開リポジトリ: https://github.com/shiraiwa31-creator/kukan-shindan)
+
+アプリを修正したら、コミット後に以下で本番へ反映(数十秒〜1分で公開):
+
+```bash
+git branch -f deploy-pages "$(git subtree split --prefix app)"
+git push -f https://github.com/shiraiwa31-creator/kukan-shindan.git deploy-pages:main
+```
+
 ## 動かし方
 
 ビルド不要。`app/index.html` をブラウザで開くだけで動きます。
