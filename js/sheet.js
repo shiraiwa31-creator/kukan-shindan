@@ -308,7 +308,8 @@ function showFieldError(name, message) {
   const field = app.querySelector(`.w-field[data-field="${name}"]`);
   if (!field) return;
   field.classList.toggle("has-error", Boolean(message));
-  field.querySelector(".w-error").textContent = message;
+  const slot = field.querySelector(".w-error");
+  if (slot) slot.textContent = message;
 }
 
 function handleSubmit() {
