@@ -1,6 +1,6 @@
 // WEAROOM 空間ヒアリング — sheet.js
 // UI制御のみ。config.js(CONFIG) / data.js(DATA) / engine.js(Engine) / submission.js(Submission) に依存。
-// 設問の描画・選択ロジックは app.js と同じ挙動(コードをコピーして保持。app.js は変更しない)。
+// 設問の描画・選択ロジック(QUESTIONS / renderQuestion / toggleSelection / goBack / goNext)は app.js からのコピー。app.js は変更しない。設問を変えるときは両方を直すこと。
 "use strict";
 
 /* ==========================================================
@@ -272,17 +272,17 @@ function renderFormBlock() {
       </div>
       <label class="w-field" data-field="name">
         <span class="w-label">お名前<em>必須</em></span>
-        <input type="text" name="name" autocomplete="name" value="${esc(f.name)}" placeholder="例：山田 花子">
+        <input type="text" name="name" autocomplete="name" maxlength="60" value="${esc(f.name)}" placeholder="例：山田 花子">
         <span class="w-error" data-error="name"></span>
       </label>
       <label class="w-field" data-field="contact">
         <span class="w-label">メールアドレス または 電話番号<em>必須</em></span>
-        <input type="text" name="contact" autocomplete="email" value="${esc(f.contact)}" placeholder="例：hanako@example.com / 090-1234-5678">
+        <input type="text" name="contact" autocomplete="email" maxlength="120" value="${esc(f.contact)}" placeholder="例：hanako@example.com / 090-1234-5678">
         <span class="w-error" data-error="contact"></span>
       </label>
       <label class="w-field" data-field="memo">
         <span class="w-label">ご要望・備考<small>任意</small></span>
-        <textarea name="memo" rows="4" placeholder="例：来月引っ越し予定。猫と暮らしています">${esc(f.memo)}</textarea>
+        <textarea name="memo" rows="4" maxlength="1000" placeholder="例：来月引っ越し予定。猫と暮らしています">${esc(f.memo)}</textarea>
       </label>
       <p class="c-privacy">ご入力いただいた内容は、WEAROOM からのご提案・ご連絡のみに使用します。</p>
       <button type="button" class="w-btn btn-submit">この内容で送信する</button>
@@ -313,6 +313,13 @@ function showFieldError(name, message) {
 }
 
 function handleSubmit() {
+  const emptyQuestion = QUESTIONS.find((q) => state.answers[q.cat].length === 0);
+  if (emptyQuestion) {
+    const summary = app.querySelector(".c-submit-error");
+    summary.textContent = `${emptyQuestion.label} が未選択です。「変更する」から選んでください`;
+    summary.hidden = false;
+    return;
+  }
   const check = Submission.validateForm(state.form);
   showFieldError("name", check.errors.name || "");
   showFieldError("contact", check.errors.contact || "");
@@ -362,12 +369,14 @@ async function sendSubmission(payload) {
 
 async function submitFlow(payload) {
   renderSending();
+  let result;
   try {
-    const result = await sendSubmission(payload);
-    renderDone(result, payload);
+    result = await sendSubmission(payload);
   } catch (err) {
     renderError(err, payload);
+    return;
   }
+  renderDone(result, payload);
 }
 
 function renderSending() {
@@ -380,13 +389,14 @@ function renderSending() {
 }
 
 function renderDone(result, payload) {
+  const title = result.dryRun ? "テスト送信として処理しました" : "送信しました";
   const note = result.dryRun
-    ? `<p class="status-note">※ 送信先が未設定のため、テスト送信として処理しました</p>`
+    ? `<p class="status-note">※ 送信先(ENDPOINT_URL)が未設定のため、内容は保存されていません</p>`
     : "";
   paint(`
     <section class="screen-status fade-in">
       <img class="status-logo" src="assets/brand/logo-v.svg" alt="WEAROOM 着替える賃貸 ウェアルーム">
-      <h1 class="status-title">送信しました</h1>
+      <h1 class="status-title">${title}</h1>
       <p class="status-text">ありがとうございます。<br>担当者が内容を確認のうえ、ご連絡いたします。</p>
       <p class="status-id">ID ${esc(payload.submissionId)}</p>
       ${note}
