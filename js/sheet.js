@@ -257,15 +257,197 @@ function renderConfirm() {
   bindConfirmEvents();
 }
 
-// Task 4 でお客様情報フォームに置き換える
+/* ==========================================================
+   お客様情報フォーム(確認画面の下部)
+   ========================================================== */
 function renderFormBlock() {
-  return "";
+  const f = state.form;
+  return `
+    <section class="c-form">
+      <div class="c-block-head">
+        <div>
+          <span class="w-eyebrow">Contact</span>
+          <h2 class="c-title">お客様情報</h2>
+        </div>
+      </div>
+      <label class="w-field" data-field="name">
+        <span class="w-label">お名前<em>必須</em></span>
+        <input type="text" name="name" autocomplete="name" value="${esc(f.name)}" placeholder="例：山田 花子">
+        <span class="w-error" data-error="name"></span>
+      </label>
+      <label class="w-field" data-field="contact">
+        <span class="w-label">メールアドレス または 電話番号<em>必須</em></span>
+        <input type="text" name="contact" autocomplete="email" value="${esc(f.contact)}" placeholder="例：hanako@example.com / 090-1234-5678">
+        <span class="w-error" data-error="contact"></span>
+      </label>
+      <label class="w-field" data-field="memo">
+        <span class="w-label">ご要望・備考<small>任意</small></span>
+        <textarea name="memo" rows="4" placeholder="例：来月引っ越し予定。猫と暮らしています">${esc(f.memo)}</textarea>
+      </label>
+      <p class="c-privacy">ご入力いただいた内容は、WEAROOM からのご提案・ご連絡のみに使用します。</p>
+      <button type="button" class="w-btn btn-submit">この内容で送信する</button>
+      <p class="w-error c-submit-error" hidden></p>
+    </section>
+  `;
 }
 
 function bindConfirmEvents() {
   app.querySelectorAll(".c-edit").forEach((btn) => {
     btn.addEventListener("click", () => editQuestion(Number(btn.dataset.q)));
   });
+  app.querySelectorAll(".c-form input, .c-form textarea").forEach((el) => {
+    el.addEventListener("input", () => {
+      state.form[el.name] = el.value;
+      showFieldError(el.name, "");
+    });
+  });
+  app.querySelector(".btn-submit").addEventListener("click", handleSubmit);
+}
+
+function showFieldError(name, message) {
+  const field = app.querySelector(`.w-field[data-field="${name}"]`);
+  if (!field) return;
+  field.classList.toggle("has-error", Boolean(message));
+  field.querySelector(".w-error").textContent = message;
+}
+
+function handleSubmit() {
+  const check = Submission.validateForm(state.form);
+  showFieldError("name", check.errors.name || "");
+  showFieldError("contact", check.errors.contact || "");
+  const summary = app.querySelector(".c-submit-error");
+  if (!check.ok) {
+    summary.textContent = "入力内容をご確認ください";
+    summary.hidden = false;
+    const firstError = app.querySelector(".w-field.has-error");
+    if (firstError) firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  summary.hidden = true;
+  const payload = Submission.buildSubmission(state.answers, state.form, { ua: navigator.userAgent });
+  submitFlow(payload);
+}
+
+/* ==========================================================
+   送信
+   ========================================================== */
+const SEND_TIMEOUT_MS = 20000;
+
+async function sendSubmission(payload) {
+  if (!CONFIG.ENDPOINT_URL) {
+    // ドライラン: 送信先未設定。payload を console に出して成功扱い
+    console.info("[WEAROOM 空間ヒアリング] dry-run payload", payload);
+    await new Promise((r) => setTimeout(r, 600));
+    return { ok: true, submissionId: payload.submissionId, dryRun: true };
+  }
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), SEND_TIMEOUT_MS);
+  try {
+    const res = await fetch(CONFIG.ENDPOINT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" }, // プリフライト回避(GAS の定石)
+      body: JSON.stringify(payload),
+      redirect: "follow",
+      signal: controller.signal,
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    if (!json || json.ok !== true) throw new Error((json && json.error) || "サーバーが送信を受け付けませんでした");
+    return json;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function submitFlow(payload) {
+  renderSending();
+  try {
+    const result = await sendSubmission(payload);
+    renderDone(result, payload);
+  } catch (err) {
+    renderError(err, payload);
+  }
+}
+
+function renderSending() {
+  paint(`
+    <section class="screen-status fade-in">
+      <div class="w-spinner" role="status" aria-label="送信中"></div>
+      <p class="status-text">送信しています…</p>
+    </section>
+  `);
+}
+
+function renderDone(result, payload) {
+  const note = result.dryRun
+    ? `<p class="status-note">※ 送信先が未設定のため、テスト送信として処理しました</p>`
+    : "";
+  paint(`
+    <section class="screen-status fade-in">
+      <img class="status-logo" src="assets/brand/logo-v.svg" alt="WEAROOM 着替える賃貸 ウェアルーム">
+      <h1 class="status-title">送信しました</h1>
+      <p class="status-text">ありがとうございます。<br>担当者が内容を確認のうえ、ご連絡いたします。</p>
+      <p class="status-id">ID ${esc(payload.submissionId)}</p>
+      ${note}
+      <div class="status-actions">
+        <button type="button" class="w-link btn-restart">最初に戻る</button>
+      </div>
+    </section>
+  `);
+  app.querySelector(".btn-restart").addEventListener("click", () => {
+    state.answers = emptyAnswers();
+    state.qIndex = 0;
+    state.form = { name: "", contact: "", memo: "" };
+    renderTop();
+  });
+}
+
+function renderError(err, payload) {
+  const reason = err && err.name === "AbortError" ? "時間内に応答がありませんでした" : String((err && err.message) || err);
+  paint(`
+    <section class="screen-status fade-in">
+      <img class="status-symbol" src="assets/brand/symbol.svg" alt="">
+      <h1 class="status-title">送信できませんでした</h1>
+      <p class="status-text">通信状況をご確認のうえ、もう一度お試しください。<br>何度も失敗する場合は、回答内容をコピーして担当者へお送りください。</p>
+      <div class="status-actions">
+        <button type="button" class="w-btn btn-retry">もう一度送信する</button>
+        <button type="button" class="w-btn w-btn--ghost btn-copy">回答内容をコピー</button>
+        <button type="button" class="w-link btn-back-confirm">確認画面に戻る</button>
+      </div>
+      <p class="status-detail">${esc(reason)}</p>
+    </section>
+  `);
+  app.querySelector(".btn-retry").addEventListener("click", () => submitFlow(payload));
+  app.querySelector(".btn-back-confirm").addEventListener("click", renderConfirm);
+  const copyBtn = app.querySelector(".btn-copy");
+  copyBtn.addEventListener("click", async () => {
+    const ok = await copyText(Submission.formatSubmissionText(payload));
+    copyBtn.textContent = ok ? "コピーしました" : "コピーできませんでした";
+    setTimeout(() => (copyBtn.textContent = "回答内容をコピー"), 2000);
+  });
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (_) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (_) {
+      ok = false;
+    }
+    ta.remove();
+    return ok;
+  }
 }
 
 /* ==========================================================
