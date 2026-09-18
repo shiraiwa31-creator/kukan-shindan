@@ -14,6 +14,19 @@ git branch -f deploy-pages "$(git subtree split --prefix app)"
 git push -f https://github.com/shiraiwa31-creator/kukan-shindan.git deploy-pages:main
 ```
 
+## WEAROOM 空間ヒアリング(別ページ)
+
+診断結果を出さず、回答内容を確認して送信するヒアリング版。テイストは WEAROOM VI 準拠。
+
+- 公開URL: **https://shiraiwa31-creator.github.io/kukan-shindan/wearoom.html**
+- ローカル: `python3 -m http.server 8000 -d app` → http://localhost:8000/wearoom.html
+- 送信先の設定: `app/js/config.js` の `ENDPOINT_URL`(空なら送信せずテスト扱い)。
+  受け口(Google Apps Script)の作り方は `gas/README.md`。
+- テスト: `node scripts/test_submission.mjs`(送信データ)/ `node scripts/test_gas.mjs`(シート追記)/
+  `python3 scripts/verify_wearoom.py`(ブラウザ通し検証、要 Playwright)
+- ロゴ SVG の再生成: `python3 scripts/extract_logo.py`(元: `wearoomブランディング/vi_wearoom_260910のコピー.pdf`)
+- 設計書: `docs/superpowers/specs/2026-09-18-wearoom-answer-sheet-design.md`
+
 ## 動かし方
 
 ビルド不要。`app/index.html` をブラウザで開くだけで動きます。
