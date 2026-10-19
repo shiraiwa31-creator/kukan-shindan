@@ -4,7 +4,7 @@
 
 const CONFIG = {
   // Google Apps Script の「ウェブアプリ URL」。空文字ならドライラン(送信せず成功扱い)。
-  ENDPOINT_URL: "",
+  ENDPOINT_URL: "https://script.google.com/macros/s/AKfycby8djpg6VHhvBZCJSooHavF_zvhq93KvL3O5Z4TA27EZFpQC97q7hXi8bMGIqvYz0Z3/exec",
   // gas/Code.gs の TOKEN と同じ文字列にする(簡易なスパム抑止。秘匿性は無い)
   TOKEN: "wearoom-hearing-2026",
   // 画像の公開 URL の起点(シートの =IMAGE() で使う)
