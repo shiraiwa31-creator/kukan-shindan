@@ -116,13 +116,11 @@ input, textarea { font-family: inherit; font-size: 16px; color: inherit; }
   font-weight: 500;
   letter-spacing: 0.3em;
 }
-.top-photos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--w-white);
+.top-photo { background: var(--w-white); }
+.top-photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (min-width: 720px) {
+  .top-photo img { aspect-ratio: 3 / 2; }
 }
-.top-photos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 .top-body { padding: 40px var(--w-gutter) 0; text-align: center; }
 .top-title {
   margin-top: 10px;

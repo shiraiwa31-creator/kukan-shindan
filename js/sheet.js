@@ -64,17 +64,14 @@ function brandHeader() {
    TOP 画面
    ========================================================== */
 function renderTop() {
-  const ldk = DATA.questions.ldk;
-  const pics = [ldk[2 % ldk.length], ldk[11 % ldk.length], ldk[19 % ldk.length]];
-
   paint(`
     <section class="screen-top fade-in">
       <div class="top-brand">
         <img class="top-logo" src="assets/brand/logo-v.svg" alt="WEAROOM 着替える賃貸 ウェアルーム">
         <p class="top-tagline">着替える、賃貸。</p>
       </div>
-      <div class="top-photos">
-        ${pics.map((p) => `<img src="${p.img}" alt="">`).join("")}
+      <div class="top-photo">
+        <img src="assets/brand/top-hero.jpg" alt="">
       </div>
       <div class="top-body">
         <p class="w-eyebrow">Hearing Sheet</p>
